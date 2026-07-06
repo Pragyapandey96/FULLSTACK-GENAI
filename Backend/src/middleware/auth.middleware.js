@@ -16,9 +16,9 @@ async function authUser(req, res, next){
         token
     })
 
-    if(!isTokenBlacklisted){
+    if(isTokenBlacklisted){
         return res.status(401).json({
-            message: "Token is invalid"
+            message: "Token is blacklisted"
         })
     }
 
@@ -26,7 +26,7 @@ async function authUser(req, res, next){
      const decoded = jwt.verify(token, process.env.JWT_SECRET)
 
      req.user = decoded
-     next()
+     next();
      
    } catch (error) {
     return res.status(401).json({
