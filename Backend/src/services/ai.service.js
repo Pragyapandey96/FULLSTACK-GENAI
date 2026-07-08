@@ -39,6 +39,7 @@ async function generateInterviewReport({ resume, selfDescription, jobDescription
        Job Description: ${jobDescription}
        `;
     
+       try{
     const response = await ai.models.generateContent({
         model: "gemini-2.5-flash",
         contents: prompt,
@@ -48,10 +49,17 @@ async function generateInterviewReport({ resume, selfDescription, jobDescription
         },
     });
 
-    console.log(response.text);
+    return JSON.parse(response.text)
     
+} catch(error){
+    console.error("Gemini API Error:", error);
+
+    if(error.status === 503){
+        throw new Error("Gemini API is currently busy. Please try again in a few minutes");
+    }
+    throw error;
 }
-    
+} 
 
 
 module.exports = generateInterviewReport
