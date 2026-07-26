@@ -4,11 +4,15 @@ const interviewReportModel = require("../models/interviewReport.models.js")
 
 
 
-
 /**
  * @description Controller to generate interview report based on user self description, resume and job description.
  */
 async function generateInterViewReportController(req, res) {
+
+    
+    console.log("Interview API called");
+    console.log(req.body);
+    console.log(req.file);
 
     const resumeContent = await (new pdfParse.PDFParse(Uint8Array.from(req.file.buffer))).getText()
     const { selfDescription, jobDescription } = req.body
@@ -16,8 +20,11 @@ async function generateInterViewReportController(req, res) {
     const interViewReportByAi = await generateInterviewReport({
         resume: resumeContent.text,
         selfDescription,
-        jobDescription
-    })
+        jobDescription,
+    });
+
+      console.log("Gemini Response:")
+        console.log(interViewReportByAi)
 
     const interviewReport = await interviewReportModel.create({
         user: req.user.id,
