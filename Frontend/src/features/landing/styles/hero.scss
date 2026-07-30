@@ -1,3 +1,4 @@
+@use "sass:color";
 .hero{
 
 min-height:100vh;
@@ -31,12 +32,12 @@ font-size:60px;
 
 line-height:1.1;
 
-color:#0f172a;
+color:#28282B;
 
 
 span{
 
-color:#2563eb;
+color:#d20d3d;
 
 }
 
@@ -48,7 +49,7 @@ p{
 
 font-size:20px;
 
-color:#64748b;
+color:#28282B;
 
 margin:25px 0;
 
@@ -83,7 +84,7 @@ font-weight:600;
 
 a:first-child{
 
-background:#2563eb;
+background:#d20d3d;
 
 color:white;
 
@@ -92,9 +93,9 @@ color:white;
 
 a:last-child{
 
-border:1px solid #2563eb;
+border:1px solid #d20d3d;
 
-color:#2563eb;
+color:#d20d3d;
 
 }
 
@@ -116,6 +117,7 @@ box-shadow:0 20px 50px #0002;
 font-size:25px;
 
 text-align:center;
+color: #28282B;
 
 }
 

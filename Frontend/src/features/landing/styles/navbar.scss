@@ -19,9 +19,10 @@
 
     font-size:28px;
     font-weight:700;
+    color: #28282B;
 
     span{
-        color:#2563eb;
+        color:#d20d3d;
     }
 
 }
@@ -36,7 +37,7 @@
 
     a{
         text-decoration:none;
-        color:#334155;
+        color:#28282B;
         font-weight:500;
     }
 
@@ -46,7 +47,7 @@
 
 .login-btn{
 
-    border:1px solid #2563eb;
+    border:1px solid #d20d3d;
     padding:10px 22px;
     border-radius:8px;
 
@@ -55,7 +56,7 @@
 
 .signup-btn{
 
-    background:#2563eb;
+    background:#d20d3d;
     color:white !important;
 
     padding:12px 25px;
