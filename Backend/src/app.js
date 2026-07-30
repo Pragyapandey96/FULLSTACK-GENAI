@@ -11,6 +11,13 @@ app.use(cors({
     credentials: true
 }))
 
+app.get("/", (req, res) => {
+  res.status(200).json({
+    message: "HireReady AI Backend is running 🚀",
+  });
+});
+
+
 /* require all the routes here */
 const authRouter = require("./routes/auth.routes.js")
 const interviewRouter = require("./routes/interview.routes.js")
@@ -22,4 +29,4 @@ app.use("/api/interview", interviewRouter)
 
 
 
-module.exports = app
+module.exports = app;
